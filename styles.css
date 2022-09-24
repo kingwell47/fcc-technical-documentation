@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&family=Ubuntu:wght@400;700&display=swap");
+
+:root {
+  --color-700: hsl(219 81% 21%);
+  --color-500: hsl(203 100% 37%);
+  --color-300: hsl(45 100% 42%);
+  --color-100: hsl(48 100% 50%);
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
+  background-color: var(--color-100);
 }
 
 *,
@@ -12,26 +22,40 @@ html {
 body {
   display: flex;
   gap: 1rem;
+  font-family: "Heebo", sans-serif;
+  color: var(--color-700);
 }
 
 nav {
   min-width: 17.19rem;
   top: 0;
   left: 0;
-  position: sticky;
   height: 100%;
   position: fixed;
   border-right: solid;
 }
 
 nav header {
+  max-width: 17.19rem;
   text-align: center;
-  padding-top: 2rem;
+  padding: 1rem;
+  font-size: 1.5em;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+@media (max-width: 375px) {
+  nav header {
+    font-size: 1.25em;
+  }
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 90%;
 }
 
 .indent {
@@ -43,6 +67,12 @@ nav a {
   color: inherit;
 }
 
+nav a:hover {
+  background-color: var(--color-700);
+  color: var(--color-100);
+  font-weight: 700;
+}
+
 li > a {
   padding-left: 1.5rem;
   display: block;
@@ -52,10 +82,19 @@ li > a {
 
 nav ul li {
   width: 100%;
-  border-top: 1px solid black;
+}
+
+nav ul li:not(:first-child) {
+  border-top: 1px solid var(--color-700);
 }
 
 #main-doc {
   position: absolute;
   margin-left: 17.19rem;
+  padding: 2rem;
+}
+
+#main-doc header {
+  font-size: 1.5em;
+  font-weight: 700;
 }
